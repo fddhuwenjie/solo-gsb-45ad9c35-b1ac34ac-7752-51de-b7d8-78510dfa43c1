@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}展陈分支导览{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('page_home') }}">展陈分支导览</a>
+    <nav>
+      <a href="{{ url_for('page_home') }}">访客入口</a>
+      <a href="{{ url_for('page_editor') }}">编辑后台</a>
+    </nav>
+  </header>
+  <main class="container">
+    {% block body %}{% endblock %}
+  </main>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

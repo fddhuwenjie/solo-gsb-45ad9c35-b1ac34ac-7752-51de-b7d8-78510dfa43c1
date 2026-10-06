@@ -1,0 +1,13 @@
+services:
+  guide:
+    build: .
+    image: exhibit-guide:latest
+    container_name: exhibit-guide
+    ports:
+      - "5000:5000"
+    volumes:
+      - guide-data:/data
+    restart: unless-stopped
+
+volumes:
+  guide-data:

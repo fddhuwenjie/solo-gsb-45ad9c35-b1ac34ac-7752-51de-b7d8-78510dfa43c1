@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}编辑导览 · 展陈分支导览{% endblock %}
+{% block body %}
+<section class="editor">
+  <div class="editor-head">
+    <div>
+      <h1>导览编辑</h1>
+      <p class="muted" id="published-info">加载中…</p>
+    </div>
+    <div class="toolbar">
+      <button id="btn-add-node" class="btn">＋ 新建节点</button>
+      <button id="btn-save" class="btn btn-primary">保存草稿</button>
+      <button id="btn-publish" class="btn btn-accent">发布新版</button>
+    </div>
+  </div>
+
+  <div id="save-status" class="save-status"></div>
+  <div id="publish-result" class="publish-result" hidden></div>
+
+  <div class="editor-body">
+    <aside class="node-list" id="node-list">
+      <p class="muted">加载中…</p>
+    </aside>
+    <section class="node-detail" id="node-detail">
+      <div class="empty-hint">从左侧选择一个节点进行编辑，或新建节点。</div>
+    </section>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>window.__TOKEN__ = null;</script>
+<script src="{{ url_for('static', filename='editor.js') }}"></script>
+{% endblock %}

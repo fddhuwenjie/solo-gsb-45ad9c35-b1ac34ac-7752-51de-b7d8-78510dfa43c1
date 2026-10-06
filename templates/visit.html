@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}参观导览 · 展陈分支导览{% endblock %}
+{% block body %}
+<section class="visit" id="visit-root">
+  <p class="muted">加载中…</p>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>window.__TOKEN__ = {{ (token or '')|tojson }};</script>
+<script src="{{ url_for('static', filename='visit.js') }}"></script>
+{% endblock %}
